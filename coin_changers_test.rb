@@ -7,10 +7,14 @@ class TestCoinChangers < Minitest::Test
 		assert_equal(1, 1)
 	end
 
-	def test_assert_that_0_returns_empty
-		assert_equal({}, get_change, (0))
+	def test_assert_that_zero_cents_returns_empty
+		assert_equal({},get_change,(0))
 	end
-	
+
+	def test_assert_that_one_penny_returns_1_cent
+		assert_equal({"penny" => 1}, get_change(1))
+	end
+
 
 
 end
